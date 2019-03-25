@@ -21,7 +21,7 @@ class Plane {
         if(!$this->landed || $this->isLandedAt['0']->name !== $airport->name) {
             throw new Exception('Cannot take off, because plane has already taken off or is not in this airport');
         }elseif ($this->isLandedAt['0']->name === $airport->name && $airport->canTakeOff($this->name)) {
-            unset($this->isLandedAt);
+            unset($this->isLandedAt['0']);
             $this->landed = false;
         }
     }
